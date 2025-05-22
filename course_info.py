@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter.ttk as ttk
-# import tkinter.messagebox as msg
+import tkinter.messagebox as msg
 from course_manager import *
 ##to do: ERROR
 from validator import course_validator
@@ -24,6 +24,16 @@ def reset_form():
     teacher_name.set("")
     load_data(course_list)
 #
+def save_btn_click():
+    course = (course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
+    errors = course_validator(course)
+    if errors:
+        msg.showerror("Errors", "\n".join(errors))
+    else:
+        msg.showinfo("Saved", "course saved")
+        course_list.append(course)
+        write_to_file("course.dat", course_list)
+        reset_form()
 
 # CourseID
 
@@ -43,9 +53,6 @@ def edit_btn_click():
 
 
 def remove_btn_click():
-    pass
-
-def save_btn_click():
     pass
 
 
