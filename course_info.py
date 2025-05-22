@@ -1,12 +1,12 @@
 from tkinter import *
 import tkinter.ttk as ttk
-import tkinter.messagebox as msg
-
+# import tkinter.messagebox as msg
 from course_manager import *
+##to do: ERROR
 from validator import course_validator
-
+##to do: ERROR
 course_list = read_from_file("course.dat")
-
+##to do: ERROR
 def load_data(course_list):
     course_list = read_from_file("course.dat")
     for row in table.get_children():
@@ -14,7 +14,7 @@ def load_data(course_list):
 
     for course in course_list:
         table.insert("", END, values=course)
-##to do: ERROR
+
 def reset_form():
     course_id.set(len(course_list) + 1)
     course_name.set("")
@@ -24,7 +24,7 @@ def reset_form():
     teacher_name.set("")
     load_data(course_list)
 #
-# ##to do: ERROR
+
 # CourseID
 
 def table_select(x):
@@ -98,7 +98,7 @@ table.column(4, width=100)
 table.column(5, width=100)
 table.column(6, width=100)
 
-# table.bind("<<TreeviewSelect>>", table_select)
+table.bind("<<TreeviewSelect>>", table_select)
 
 table.place(x=245, y=20)
 
