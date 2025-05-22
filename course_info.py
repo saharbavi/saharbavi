@@ -27,7 +27,7 @@ def reset_form():
 ##to do: ERROR
 def save_btn_click():
     person = (course_id.get(), course_name.get(), course_code.get(), course_day.get(),course_date.get(), teacher_name.get())
-    errors = course_validator(person)
+    errors = course_validator(course)
     if errors:
         msg.showerror("Errors", "\n".join(errors))
     else:
@@ -36,22 +36,24 @@ def save_btn_click():
         write_to_file("course.dat", course_list)
         reset_form()
 #
+
+def table_select(x):
+    selected_course = table.item(table.focus())["values"]
+    if selected_course:
+        course_id.set(selected_course[0])
+        course_name.set(selected_course[1])
+        course_code.set(selected_course[2])
+        course_day.set(selected_course[3])
+        course_code.set(selected_course[4])
+        course_day.set(selected_course[5])
 #
-# def table_select(x):
-#     selected_person = table.item(table.focus())["values"]
-#     if selected_person:
-#         id.set(selected_person[0])
-#         name.set(selected_person[1])
-#         family.set(selected_person[2])
-#         account.set(selected_person[3])
-#
-#
-# def edit_btn_click():
-#     pass
-#
-#
-# def remove_btn_click():
-#     pass
+
+def edit_btn_click():
+    pass
+
+
+def remove_btn_click():
+    pass
 
 
 window = Tk()
@@ -108,8 +110,8 @@ table.column(6, width=100)
 table.place(x=245, y=20)
 
 Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=220)
-Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=220)
-Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
+# Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=220)
+# Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
 Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=180, width=190)
 
 reset_form()
