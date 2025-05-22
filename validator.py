@@ -9,10 +9,16 @@ def course_validator(course):
         errors.append('Course Name is Invalid')
 
 
-    if not (type(course[2]) == str and re.match(r"^[a-zA-Z\s]{3,30}$", course[2])):
+    if not (type(course[2]) == str and re.match(r"^[0-9]{3}$", course[2])):
         errors.append('Course Code is Invalid')
 
-    if not (type(course[3]) == int and course[3]>0):
-        errors.append('Person Account Amount must be an integer > 0')
+    if not (type(course[3]) == str and re.match(r"^[a-zA-Z\s]{3,30}$", course[3])):
+        errors.append('Course day is Invalid')
+
+    if not (type(course[4]) == str and re.match(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$", course[4])):
+        errors.append('Course date is Invalid')
+
+    if not (type(course[5]) == str and re.match(r"^[a-zA-Z\s]{3,30}$", course[5])):
+        errors.append('Teacher name is Invalid')
 
     return errors

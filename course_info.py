@@ -5,7 +5,7 @@ import tkinter.messagebox as msg
 from course_manager import *
 from validator import course_validator
 
-person_list = read_from_file("course.dat")
+course_list = read_from_file("course.dat")
 
 def load_data(course_list):
     course_list = read_from_file("course.dat")
@@ -23,19 +23,9 @@ def reset_form():
     course_date.set("")
     teacher_name.set("")
     load_data(course_list)
-
-##to do: ERROR
-def save_btn_click():
-    person = (course_id.get(), course_name.get(), course_code.get(), course_day.get(),course_date.get(), teacher_name.get())
-    errors = course_validator(course)
-    if errors:
-        msg.showerror("Errors", "\n".join(errors))
-    else:
-        msg.showinfo("Saved", "course saved")
-        course_list.append(course)
-        write_to_file("course.dat", course_list)
-        reset_form()
 #
+# ##to do: ERROR
+# CourseID
 
 def table_select(x):
     selected_course = table.item(table.focus())["values"]
@@ -53,6 +43,9 @@ def edit_btn_click():
 
 
 def remove_btn_click():
+    pass
+
+def save_btn_click():
     pass
 
 
@@ -110,9 +103,10 @@ table.column(6, width=100)
 table.place(x=245, y=20)
 
 Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=220)
-# Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=220)
-# Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
+Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=220)
+Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=220)
 Button(window, text="Clear", width=6, command=reset_form).place(x=20, y=180, width=190)
+
 
 reset_form()
 
