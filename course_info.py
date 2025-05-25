@@ -4,11 +4,9 @@ import tkinter.messagebox as msg
 from course_manager import *
 from validator import *
 
-# to do: ERROR
 course_list = read_from_file("course.dat")
 
 
-##to do: ERROR
 def load_data(course_list):
     course_list = read_from_file("course.dat")
     for row in table.get_children():
@@ -31,7 +29,7 @@ def reset_form():
 #
 def save_btn_click():
     course = (
-    course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
+        course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
     errors = course_validator(course)
     if errors:
         msg.showerror("Errors", "\n".join(errors))
@@ -122,9 +120,9 @@ table.place(x=245, y=20)
 Button(window, text="Save", width=6, command=save_btn_click).place(x=20, y=280)
 Button(window, text="Edit", width=6, command=edit_btn_click).place(x=90, y=280)
 Button(window, text="Remove", width=6, command=remove_btn_click).place(x=160, y=280)
-Button(window, text="Clear", width=6, command=reset_form).place(x=230, y=280)
+Button(window, text="Clear", width=26, command=reset_form).place(x=25, y=220)
 
 #
-# reset_form()
+reset_form()
 
 window.mainloop()

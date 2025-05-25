@@ -22,9 +22,9 @@ def write_to_file(filename, data_list):
     file = open(filename, "wb")
     pickle.dump(data_list, file)
     file.close()
+#
+# courses = []
+# write_to_file("course.dat", courses)
 
-courses = []
-write_to_file("course.dat", courses)
-
-course_list = read_from_file("course.dat")
-print(course_list)
+# course_list = read_from_file("course.dat")
+# print(course_list)
