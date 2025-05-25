@@ -10,6 +10,6 @@ btn: save
      clear
      remove
 
-file ---->validatore.py >>>> completed
+file ---->validator.py >>>> completed
 file ---->course_manager.py >>>> completed
 file ---->course_info.py >>>> completed  2Error

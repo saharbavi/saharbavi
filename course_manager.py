@@ -1,6 +1,7 @@
 import os
 import pickle
 
+
 def check_file(filename):
     return os.path.exists(filename)
 
@@ -16,10 +17,14 @@ def read_from_file(filename):
         file.close()
         return []
 
+
 def write_to_file(filename, data_list):
     file = open(filename, "wb")
     pickle.dump(data_list, file)
     file.close()
-print(read_from_file("course.dat"))
 
+courses = []
+write_to_file("course.dat", courses)
 
+course_list = read_from_file("course.dat")
+print(course_list)
