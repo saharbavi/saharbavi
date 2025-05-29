@@ -68,18 +68,18 @@ def edit_btn_click():
 
 
 def remove_btn_click():
-    # selected_item = table.focus()
-    # course = (
-    #     course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
-    # if selected_item:
-    #     table.delete(selected_item)
-    #     course_list.remove(course)
-    #     write_to_file("course.dat", course_list)
-    #     print("Course removed.")
-    #
-    # else:
-    #     print("No course selected.")
-    pass
+    selected_item = table.focus()
+    course = (
+        course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
+    if selected_item:
+        table.delete(selected_item)
+        course_list.remove(course)
+        write_to_file("course.dat", course_list)
+        print("Course removed.")
+
+    else:
+        print("No course selected.")
+
 
 
 window = Tk()
