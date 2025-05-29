@@ -1,4 +1,4 @@
-from  validator import *
+# from  validator import *
 
 class Course:
 
@@ -12,10 +12,8 @@ class Course:
         self.teacher_name = teacher_name
 
     def save(self):
-
         print(f"{self.course_id} {self.course_name} {self.course_code} {self.course_day} {self.course_date} {self.teacher_name}  has been saved.")
 
 
 course1 = Course(1, "python", "201", "mon", "1404-07-12" , "sara")
-print(course_validator(course1))
 Course.save(course1)
