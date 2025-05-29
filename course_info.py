@@ -52,19 +52,19 @@ def table_select(x):
 
 
 def edit_btn_click():
-    # selected_item = table.focus()
-    # course = (
-    #     course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
-    # if selected_item:
-    #     table.item(selected_item, values=course)
-    #     #todo:edit happen but didn't remove
-    #     course_list.append(course)
-    #     write_to_file("course.dat", course_list)
-    #
-    #     print("Course updated.")
-    # else:
-    #     print("No course selected.")
-    pass
+    selected_item = table.focus()
+    course = (
+        course_id.get(), course_name.get(), course_code.get(), course_day.get(), course_date.get(), teacher_name.get())
+    if selected_item:
+        table.item(selected_item, values=course)
+        #todo:edit happen but didn't remove
+        course_list.append(course)
+        write_to_file("course.dat", course_list)
+
+        print("Course updated.")
+    else:
+        print("No course selected.")
+
 
 
 def remove_btn_click():
