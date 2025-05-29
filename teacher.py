@@ -6,7 +6,7 @@ class Teacher:
         self.family = family
         self.birth_date = birth_date
 
-    @staticmethod
+
     def save(name, family):
         print("Teacher:",name+" "+family+" saved!")
 
