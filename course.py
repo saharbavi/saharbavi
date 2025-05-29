@@ -9,7 +9,7 @@ class Course:
 
 
     def save(self):
-        print(f"{self.title} {self.code} has been saved.")
+        print(f"{self.c_id} {self.title} {self.code} {self.teacher_name} {self.day} has been saved.")
 
 
 course1=Course(1,"python","201","sara","mon")
